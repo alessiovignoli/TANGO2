@@ -1,0 +1,10 @@
+#stuff not needed for commits
+
+.DS_Store
+.nextflow.log*
+.nextflow/
+/results*/
+/test*
+/data/
+/work*/
+/singular/

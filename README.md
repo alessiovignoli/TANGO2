@@ -33,7 +33,7 @@ or using `singularity`:
 ```
 nextflow run align_and_evaluate.nf --IN "data/*" -profile standard,singularity
 ```
-or with no contenairization technology, (not advisable:
+or with no contenairization technology, not advisable since `t_coffe` has to be already installed in the system and callable as command, read >Pipeline description<:
 ```
 nextflow run align_and_evaluate.nf --IN "data/*" -profile standard
 ```
@@ -57,3 +57,9 @@ Having said that the command is the following:
 ```
 nextflow run align_and_evaluate.nf --IN "data/*" -profile cloud,singularity
 ```
+
+
+## Pipeline description
+
+This pipeline expects one or more fasta files containg the sequences that have to be alligned. A Multiple Sequence Allignment (MSA) is produced for each fasta input; so be aware to put in the same file all the sequences you want to allign toghether. 
+The allignment is computed using the following command (t_coffee version_13.45.47.aba98c5):

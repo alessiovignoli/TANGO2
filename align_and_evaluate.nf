@@ -66,9 +66,9 @@ process tcoffee_scores_production {
 	path ascii_scorefile, emit: ascii_score
 	
 	script:
-	ascii_scorefile = "${in_aln.baseName}.score_ascii"
+	ascii_scorefile = "${in_aln.baseName}.score_html"
 	"""
-	t_coffee -other_pg seq_reformat -in ${in_aln} -action +evaluate blosum62mt -output score_ascii > ${ascii_scorefile}
+	t_coffee -other_pg seq_reformat -in ${in_aln} -action +evaluate blosum62mt -output score_html > ${ascii_scorefile}
 	t_coffee -other_pg aln_compare -al1 ${in_aln} -al2 ${in_aln} -compare_mode sp
 	"""
 }

@@ -83,5 +83,5 @@ TANGO2_Q6ICL3-2 5          32.6   100.0 [100.0]   [ 4856]
 The field described above are on the last row. For more detail on the `aln_compare` command take a look at https://tcoffee.readthedocs.io/en/latest/tcoffee_main_documentation.html#estimating-the-diversity-in-your-alignment .
 Standard out inforamtion are also saved to `--OUT_DIR` option location in a file called results.scores.
 
-The other type of output is the allignment reporing the TCS score in .asci_score and .htnml formats. This are also present in the `--OUT_DIR` specified derectory (default `results/`) and an example is shown in `results/` subfolder.
+The other type of output is the allignment reporing the TCS score in  and .score_htnml formats. This are also present in the `--OUT_DIR` specified derectory (default `results/`) and an example is shown in `results/` subfolder.
 

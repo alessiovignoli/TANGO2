@@ -81,7 +81,7 @@ To standard output is printed the result of the last comand reporting, filename,
 seq1       seq2          Sim   [ALL]           Tot  
 TANGO2_Q6ICL3-2 5          32.6   100.0 [100.0]   [ 4856]
 ```
-The field described above are on the last row. For more detail on the `aln_compare` command take a look at https://tcoffee.readthedocs.io/en/latest/tcoffee_main_documentation.html#estimating-the-diversity-in-your-alignment . for each MSA on top of te above lines there are other five more stating the covariace values as depicted below:
+The field described above are on the last row. For more detail on the `aln_compare` command take a look at https://tcoffee.readthedocs.io/en/latest/tcoffee_main_documentation.html#estimating-the-diversity-in-your-alignment . for each MSA on top of te above lines there are other five more stating the coverage values as depicted below:
 ```
 Coverage
 TOT 88.60

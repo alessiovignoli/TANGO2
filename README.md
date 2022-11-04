@@ -68,10 +68,11 @@ t_coffee -in input.fasta-mode=regular -outfile input.aln -maxnseq=150 -maxlen=10
 ```
 To see the exact nextflow adapted command just open the `align_and_evaluate.nf` file. 
 
-Once the MSAs have been creted the pipeline computes for each of them the TCS (score_ascii) and average percentage identity scores, using the following commands:
+Once the MSAs have been creted the pipeline computes for each of them the TCS (score_ascii), average percentage identity  and average coverage scores, using the following commands:
 ```
 t_coffee -other_pg seq_reformat -in input.aln -action +evaluate blosum62mt -output score_ascii > input.score_ascii
 t_coffee -other_pg aln_compare -al1 input.aln -al2 input.aln -compare_mode sp
+t_coffee -other_pg seq_reformat -in input.aln -output cov 
 ```
 
 To standard output is printed the result of the last comand reporting, filename, number of sequences, average % identity, 100% (similarity with itself) and number of columns in MSA. This is an example:
@@ -80,8 +81,17 @@ To standard output is printed the result of the last comand reporting, filename,
 seq1       seq2          Sim   [ALL]           Tot  
 TANGO2_Q6ICL3-2 5          32.6   100.0 [100.0]   [ 4856]
 ```
-The field described above are on the last row. For more detail on the `aln_compare` command take a look at https://tcoffee.readthedocs.io/en/latest/tcoffee_main_documentation.html#estimating-the-diversity-in-your-alignment . for each MSA on top of te above lines there are other 
+The field described above are on the last row. For more detail on the `aln_compare` command take a look at https://tcoffee.readthedocs.io/en/latest/tcoffee_main_documentation.html#estimating-the-diversity-in-your-alignment . for each MSA on top of te above lines there are other five more stating the covariace values as depicted below:
+```
+Coverage
+TOT 88.60
+AVG 88.60
+VAR 49.38
+STD 7.03
+```
+The names are self explanatory.
+
 Standard out inforamtion are also saved to `--OUT_DIR` option location in a file called results.scores.
 
-The other type of output is the allignment reporing the TCS score in  and .score_htnml formats. This are also present in the `--OUT_DIR` specified derectory (default `results/`) and an example is shown in `results/` subfolder.
+The other type of output is the allignment reporing the TCS score in htnml format. This files are also present in the `--OUT_DIR` specified derectory (default `results/`) and an example is present in `results/` subfolder.
 

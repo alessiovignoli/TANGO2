@@ -70,7 +70,7 @@ process tcoffee_scores_production {
 	"""
 	t_coffee -other_pg seq_reformat -in ${in_aln} -action +evaluate blosum62mt -output score_html > ${ascii_scorefile}
 	t_coffee -other_pg aln_compare -al1 ${in_aln} -al2 ${in_aln} -compare_mode sp
-	echo Covariance
+	echo Coverage
 	t_coffee -other_pg seq_reformat -in ${in_aln} -output cov | tail -n 4 | awk  '{print \$2, \$4}'
 	"""
 }
